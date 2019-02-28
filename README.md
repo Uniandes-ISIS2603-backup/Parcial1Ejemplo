@@ -28,13 +28,10 @@ con el json:
 ```json 
 { 
   "name": "Breaking bad",
-  "description": "Set and filmed in Albuquerque, New Mexico, 
-  the series tells the story of Walter White, 
-  a struggling and depressed high school chemistry teacher 
-  who is diagnosed with lung cancer",
+  "description": "Set and filmed in Albuquerque, New Mexico, the series tells the story of Walter White, a struggling and depressed high school chemistry teacher who is diagnosed with lung cancer",
   "personajes": [{
                "name": "Walter Hartwell White Sr",
-			   "portrayedBy": "Bryan Cranston",
+			   "portrayedBy": "Bryan Cranston"
             }]
 }
 ```
@@ -66,7 +63,7 @@ public PersonajeEntity toEntity() {
 ```
 2. (10%) Defina en `SerieEntity` la relación con `Personaje` (unidireccional) e implemente sus `set/get`. Esta es una relación de **composición** de uno de muchos (`OneToMany`). 
 
-3. (15%) Defina un atributo nuevo en `SerieDetailDTO` que representa el listado de personajes que participan en la serie. Defina `set/get` y actualice el método constructor que recibe un `SerieEntity` al igual que el método `toEntity`, para que también hagan la conversión del listado de personajes. 
+3. (15%) Defina un atributo nuevo en `SerieDetailDTO` que representa el listado de personajes que participan en la serie. Defina `set/get` y actualice el método constructor que recibe un `SerieEntity` al igual que el método `toEntity`, el cual retorna un objeto de tipo `SerieEntity`, para que también haga la conversión del listado de personajes. 
 
 4. (15%) Modifique el método `createSerie` de la clase `SerieLogic` para que tenga en cuenta las siguientes reglas de negocio. 
 - No deben existir dos series con la misma descripción 
@@ -87,12 +84,10 @@ Si las reglas de negocio se cumplen, se debe llamar la persistencia para que el 
 ```json 
 { 
   "name": "Orange Is the New Black",
-  "description": "The series begins revolving around Piper Chapman, 
-  a woman in her thirties living in New York City 
-  who is sentenced to 15 months in Litchfield Penitentiary",
+  "description": "The series begins revolving around Piper Chapman, a woman in her thirties living in New York City who is sentenced to 15 months in Litchfield Penitentiary",
   "personajes": [{
                "name": "Alex Vause",
-			   "portrayedBy": "Laura Prepon",
+			   "portrayedBy": "Laura Prepon"
             }]
 }
 ```
