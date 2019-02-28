@@ -1,14 +1,14 @@
 # Instrucciones
 
-1. Descargue el repositorio y abra estos proyectos en Netbeans
+1. Descargue este repositorio y abra los proyectos en Netbeans.
 
-2. En Netbeans vaya a Services, Databases, JavaDB y cree una base de datos que se llame series (los demás campos déjelos en blanco)
+2. En Netbeans vaya a Services > Databases > JavaDB y cree una base de datos que se llame `series` (los demás campos déjelos en blanco).
 
-3. En Netbeans vaya a Tools, Options, Java, seleccione la pestaña Maven y marque la opción `Skip Tests for any build executions no directly related to testing`
+3. En Netbeans vaya a Tools > Options > Java, seleccione la pestaña Maven y marque la opción `Skip Tests for any build executions no directly related to testing`.
 
-4. Cada vez que complete un paso genere un commit
+4. Cada vez que complete un paso genere un commit.
 
-5. Al finalizar ingrese a github y genere un release con el nombre `Entrega_Parcial_S4`
+5. Al finalizar ingrese a github y genere un release con el nombre `Entrega_Parcial_S4`.
 
 ## Contexto
 
@@ -67,19 +67,19 @@ public PersonajeEntity toEntity() {
 ```
 2. (10%) Defina en `SerieEntity` la relación con `Personaje` (unidireccional) e implemente sus `set/get`. Esta es una relación de **composición** de uno de muchos (`OneToMany`). 
 
-3. (10%) Defina un atributo nuevo en `SerieDetailDTO` que representa el listado de personajes que participan en la serie. Defina `set/get` y actualice el método constructor que recibe un `SerieEntity` al igual que el método `toEntity`, el cual retorna un objeto de tipo `SerieEntity`, para que también haga la conversión del listado de personajes. 
+3. (10%) Defina un atributo nuevo en `SerieDetailDTO` que representa el listado de personajes que participan en la serie. Defina `set/get` y actualice el método constructor que recibe un `SerieEntity` al igual que el método `toEntity`, el cual retorna un objeto de tipo `SerieEntity`, para que también hagan la conversión del listado de personajes. 
 
 4. (20%) Modifique el método `createSerie` de la clase `SerieLogic` para que tenga en cuenta las siguientes reglas de negocio. 
-- No deben existir dos series con la misma descripción 
-- La longitud de la descripción debe ser superior a 30 caracteres
+- No deben existir dos series con la el mismo nombre.
+- La longitud de la descripción debe ser superior a 30 caracteres.
 
 Si las reglas de negocio se cumplen, se debe llamar la persistencia para que el objeto sea persistido, de lo contrario debe lanzar una excepción `BussinessLogicException` con un mensaje donde se especifique cuál regla no se cumplió.
 
 5. (10%) Modifique la prueba de crear serie en `SeriePersistenceTest` para que ahora también valide si el listado de personajes es correcto.
 
-6. Ejecute su prueba unitaria
+6. Ejecute su prueba unitaria.
 
-7. Ejecute la siguiente prueba la cual debe arrojar el código 200
+7. Ejecute la siguiente prueba la cual debe arrojar el código 200.
 
 `POST localhost:8080/s4_series-api/api/series/`
 
@@ -100,7 +100,7 @@ Si las reglas de negocio se cumplen, se debe llamar la persistencia para que el 
 
 `GET localhost:8080/s4_series-api/api/series/:id`
 
-8. Ejecute las siguiente prueba que debe arrojar un código 412, ya que la descripción de la serie no es superior a 30 caracteres
+8. Ejecute la siguiente prueba que debe arrojar un código 412, ya que la descripción de la serie no es superior a 30 caracteres.
 
 ```json 
 { 
@@ -127,6 +127,6 @@ Para ello usted de cumplir con los siguientes pasos.
 
 4. (10%) Cree el método `deleteSerie` en la clase `SerieResource` el cual verifica la existencia del recurso; en el caso que no exista lanza una excepción `WebApplicationException` con el mensaje correspondiente, de lo contrario llama a la lógica para validar reglas de negocio.
 
-5. Verifique el funcionamiento ejecutando
+5. Verifique el funcionamiento ejecutando:
 
 `DELETE localhost:8080/s4_series-api/api/series/:id`
