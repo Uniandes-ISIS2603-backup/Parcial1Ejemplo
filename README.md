@@ -31,12 +31,12 @@ con el json:
 
 ```json 
 { 
-  "name": "Breaking bad",
-  "description": "Set and filmed in Albuquerque, New Mexico, the series tells the story of Walter White, a struggling and depressed high school chemistry teacher who is diagnosed with lung cancer",
-  "personajes": [{
-               "name": "Walter Hartwell White Sr",
-			   "portrayedBy": "Bryan Cranston"
-            }]
+    "name": "Breaking bad",
+    "description": "Set and filmed in Albuquerque, New Mexico, the series tells the story of Walter White, a struggling and depressed high school chemistry teacher who is diagnosed with lung cancer",
+    "personajes": [{
+        "name": "Walter Hartwell White Sr",
+		"portrayedBy": "Bryan Cranston"
+    }]
 }
 ```
 
@@ -48,22 +48,22 @@ Para esto Ud. debe:
 
 ```java
 public PersonajeDTO(PersonajeEntity personaje) {
-        this.id = personaje.getId();
-        this.name = personaje.getName();
-		...
-    }
+    this.id = personaje.getId();
+    this.name = personaje.getName();
+    ...
+}
 ```
 
 Para convertir un `PersonajeDTO` en un `PersonajeEntity` defina el siguiente método:
 
 ```java
 public PersonajeEntity toEntity() {
-        PersonajeEntity entity = new PersonajeEntity();
-        entity.setId(this.id);
-        entity.setName(this.name);   
-        ...		
-        return entity;
-    }
+    PersonajeEntity entity = new PersonajeEntity();
+    entity.setId(this.id);
+    entity.setName(this.name);   
+    ...		
+    return entity;
+}
 ```
 2. (10%) Defina en `SerieEntity` la relación con `Personaje` (unidireccional) e implemente sus `set/get`. Esta es una relación de **composición** de uno de muchos (`OneToMany`). 
 
@@ -87,12 +87,12 @@ Si las reglas de negocio se cumplen, se debe llamar la persistencia para que el 
 
 ```json 
 { 
-  "name": "Orange Is the New Black",
-  "description": "The series begins revolving around Piper Chapman, a woman in her thirties living in New York City who is sentenced to 15 months in Litchfield Penitentiary",
-  "personajes": [{
-               "name": "Alex Vause",
-			   "portrayedBy": "Laura Prepon"
-            }]
+    "name": "Orange Is the New Black",
+    "description": "The series begins revolving around Piper Chapman, a woman in her thirties living in New York City who is sentenced to 15 months in Litchfield Penitentiary",
+    "personajes": [{
+        "name": "Alex Vause",
+		"portrayedBy": "Laura Prepon"
+    }]
 }
 ```
 
@@ -104,12 +104,12 @@ Si las reglas de negocio se cumplen, se debe llamar la persistencia para que el 
 
 ```json 
 { 
-  "name": "Game of Thrones",
-  "description": "American fantasy drama",
-  "personajes": [{
-               "name": "Catelyn Tully",
-			   "portrayedBy": "Michelle Fairley"
-            }]
+    "name": "Game of Thrones",
+    "description": "American fantasy drama",
+    "personajes": [{
+        "name": "Catelyn Tully",
+		"portrayedBy": "Michelle Fairley"
+    }]
 }
 ```
 
