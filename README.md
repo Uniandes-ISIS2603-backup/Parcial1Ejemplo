@@ -2,7 +2,7 @@
 
 1. Descargue el repositorio y abra estos proyectos en Netbeans
 
-2. En Netbeans aaya a Services, Databases, JavaDB y cree una base de datos que se llame series (los demás campos déjelos en blanco)
+2. En Netbeans vaya a Services, Databases, JavaDB y cree una base de datos que se llame series (los demás campos déjelos en blanco)
 
 3. En Netbeans vaya a Tools, Options, Java, seleccione la pestaña Maven y marque la opción `Skip Tests for any build executions no directly related to testing`
 
@@ -44,7 +44,7 @@ se cree la serie con la información de uno o varios personajes.
 
 Para esto Ud. debe:
 
-1. (15%) Crear las clases `PersonajeDTO` y `PersonajeEntity` que modelan al personaje. En la clase `PersonajeDTO`, además de tener un constructor sin parámetros, defina un constructor para convertir un `PersonajeEntity` en un `PersonajeDTO`:
+1. (10%) Crear las clases `PersonajeDTO` y `PersonajeEntity` que modelan al personaje. En la clase `PersonajeDTO`, además de tener un constructor sin parámetros, defina un constructor para convertir un `PersonajeEntity` en un `PersonajeDTO`:
 
 ```java
 public PersonajeDTO(PersonajeEntity personaje) {
@@ -67,15 +67,15 @@ public PersonajeEntity toEntity() {
 ```
 2. (10%) Defina en `SerieEntity` la relación con `Personaje` (unidireccional) e implemente sus `set/get`. Esta es una relación de **composición** de uno de muchos (`OneToMany`). 
 
-3. (15%) Defina un atributo nuevo en `SerieDetailDTO` que representa el listado de personajes que participan en la serie. Defina `set/get` y actualice el método constructor que recibe un `SerieEntity` al igual que el método `toEntity`, el cual retorna un objeto de tipo `SerieEntity`, para que también haga la conversión del listado de personajes. 
+3. (10%) Defina un atributo nuevo en `SerieDetailDTO` que representa el listado de personajes que participan en la serie. Defina `set/get` y actualice el método constructor que recibe un `SerieEntity` al igual que el método `toEntity`, el cual retorna un objeto de tipo `SerieEntity`, para que también haga la conversión del listado de personajes. 
 
-4. (15%) Modifique el método `createSerie` de la clase `SerieLogic` para que tenga en cuenta las siguientes reglas de negocio. 
+4. (20%) Modifique el método `createSerie` de la clase `SerieLogic` para que tenga en cuenta las siguientes reglas de negocio. 
 - No deben existir dos series con la misma descripción 
 - La longitud de la descripción debe ser superior a 30 caracteres
 
 Si las reglas de negocio se cumplen, se debe llamar la persistencia para que el objeto sea persistido, de lo contrario debe lanzar una excepción `BussinessLogicException` con un mensaje donde se especifique cuál regla no se cumplió.
 
-5. (15%) Modifique la prueba de crear serie en `SeriePersistenceTest` para que ahora también valide si el listado de personajes es correcto.
+5. (10%) Modifique la prueba de crear serie en `SeriePersistenceTest` para que ahora también valide si el listado de personajes es correcto.
 
 6. Ejecute su prueba unitaria
 
