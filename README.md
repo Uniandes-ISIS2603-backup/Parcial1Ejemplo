@@ -2,9 +2,13 @@
 
 1. Descargue el repositorio y abra estos proyectos en Netbeans
 
-2. Cada vez que complete un paso genere un commit
+2. En Netbeans aaya a Services, Databases, JavaDB y cree una base de datos que se llame series (los demás campos déjelos en blanco)
 
-3. Al finalizar ingrese a github y genere un release con el nombre `Entrega_Parcial_S4`
+3. En Netbeans vaya a Tools, Options, Java, seleccione la pestaña Maven y marque la opción `Skip Tests for any build executions no directly related to testing`
+
+4. Cada vez que complete un paso genere un commit
+
+5. Al finalizar ingrese a github y genere un release con el nombre `Entrega_Parcial_S4`
 
 ## Contexto
 
